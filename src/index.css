@@ -1,170 +1,219 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap");
 
-*{
-    font-family: "Poppins", sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
-.nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 20px;
-}
-
-.nav h2{
-    text-transform: uppercase;
-    color: orange;
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
 }
 
-.nav button{
-    padding: 8px 15px;
-    border: 1px solid orange;
-    background-color: orange;
-    color: #fff;
-    border-radius: 8px;
-    transition: 0.2s;
+.nav h2 {
+  text-transform: uppercase;
+  color: orange;
 }
 
-.nav button:hover{
-    background-color: darkorange;
+.nav button {
+  padding: 8px 15px;
+  border: 1px solid orange;
+  background-color: orange;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.2s;
 }
 
-.summary{
-    text-align: center;
-    padding: 10px 20px;
+.nav button:hover {
+  background-color: darkorange;
 }
 
-.summary p{
-    color: dimgray;
-    font-size: 17px;
+.summary {
+  text-align: center;
+  padding: 10px 20px;
 }
 
-.card-body{
-    display: flex;
-    justify-content: center;
+.summary p {
+  color: dimgray;
+  font-size: 17px;
 }
 
-.card{
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid orange;
-    border-radius: 10px;
-    margin: 20px 0;
-    padding: 5px 0;
+.card-body {
+  display: flex;
+  justify-content: center;
 }
 
-.card-left{
-    padding: 0 20px;
+.card {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid orange;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 5px 0;
 }
 
-.card-right{
-    padding: 0 20px;
-}
-.card-right input{
-    padding: 5px 1px;
-    text-align: center;
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    width: 50px;
-    border: 1px solid orange;
-    border-radius: 5px;
+.card-left {
+  padding: 0 20px;
 }
 
-.card-right input:focus{
-    outline: none;
+.card-right {
+  padding: 0 20px;
+}
+.card-right input {
+  padding: 5px 1px;
+  text-align: center;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 50px;
+  border: 1px solid orange;
+  border-radius: 5px;
 }
 
-.card-right button{
-    padding: 6px;
-    border: 1px solid orange;
-    background-color: orange;
-    color: #fff;
-    border-radius: 5px;
+.card-right input:focus {
+  outline: none;
 }
 
-.backdrop{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card-right button {
+  padding: 6px;
+  border: 1px solid orange;
+  background-color: orange;
+  color: #fff;
+  border-radius: 5px;
 }
 
-.cart-box{
-    background-color: #fff;
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cart-box span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    padding: 20px;
-    font-weight: 600;
+.cart-box {
+  background-color: #fff;
+  width: 515px;
+  height: 80vh;
+  border-radius: 8px;
+  left: 50%;
+  margin-left: -250px;
+  position: fixed;
+  z-index: 40;
+  top: 60px;
 }
 
-.cart{
-    display: flex;
-    width: 450px;
-    justify-content: space-between;
-    border: 2px solid orange;
-    border-radius: 10px;
-    margin: 10px 30px;
+.overflowCtr {
+  height: 60%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
-.cart-left{
-    padding: 0 20px;
+.cart-box span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: 600;
 }
 
-.cart-right{
-    padding: 0 20px;
-    margin: 10px 0;
+.cart {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid orange;
+  border-radius: 10px;
+  margin: 10px 30px;
+  padding: 0 0 18px 0;
 }
 
-.cart-total{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 30px;
+.cart-left {
+  padding: 0 20px;
 }
 
-.btn{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    gap: 8px;
+.cart-right {
+  padding: 0 20px;
 }
 
-.orderBtn{
-    padding: 8px 14px;
-    border: 1px solid orange;
-    background-color: orange;
-    color: #fff;
-    border-radius: 8px;
-    transition: 0.3s;
+.cart-right button {
+  border: 1px solid orange;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
-.cancelBtn{
-    padding: 8px 8px;
-    border: 1px solid orange;
-    background-color: transparent;
-    color: orange;
-    border-radius: 8px;
-    transition: 0.3s;
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
 }
 
-.orderBtn:hover{
-    background-color: darkorange;
+.cart-title {
+  font-size: 17px;
+  font-weight: 700;
 }
 
-.cancelBtn:hover{
-    background-color: #faf0f0;
+.cart-price {
+  font-weight: 700;
+  color: dimgrey;
+}
+
+.noDataCart {
+  color: red;
+  font-weight: 700;
+  padding: 20px 30px;
+}
+
+.closeBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  gap: 8px;
+}
+
+.plusBtn {
+  margin-right: 10px;
+}
+
+.orderBtn {
+  padding: 8px 14px;
+  border: 1px solid orange;
+  background-color: orange;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.cancelBtn {
+  padding: 8px 8px;
+  border: 1px solid orange;
+  background-color: transparent;
+  color: orange;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.orderBtn:hover {
+  background-color: darkorange;
+}
+
+.cancelBtn:hover {
+  background-color: #faf0f0;
+}
+
+button:hover {
+  cursor: pointer;
 }

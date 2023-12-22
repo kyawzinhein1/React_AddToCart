@@ -1,14 +1,19 @@
-import React from 'react'
+import {useContext} from "react";
+import { ItemContext } from "../Store/itemContext";
 
-const Nav = () => {
+const Nav = (props) => {
+  const { items } = useContext(ItemContext);
+  const totalCart = items.reduce((currentVal,item)=>{
+    return currentVal + item.amount;
+  },0);
   return (
-    <nav className='nav'>
-        <h2>IdeaLand</h2>
-        <button>
-            Cart <span>(1)</span>
-        </button>
+    <nav className="nav">
+      <h2>My Shop</h2>
+      <button onClick={props.showCartHandler}>
+        Cart <span>{totalCart}</span>
+      </button>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

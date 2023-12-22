@@ -1,47 +1,53 @@
 import React from "react";
 import CartItem from "./CartItem";
+import { useContext } from "react";
+import { ItemContext } from "../Store/itemContext";
 
-const fruits = [
-  {
-    id: 1,
-    name: "Apple",
-    price: 10.5,
-    description: "Best Organic Apple",
-    quantity: 5,
-  },
-  {
-    id: 2,
-    name: "Mango",
-    price: 8.5,
-    description: "Best Organic Mango",
-    quantity: 3,
-  },
-  {
-    id: 3,
-    name: "Pineapple",
-    price: 13.5,
-    description: "Best Organic Pineapple",
-  },
-];
+const Cart = (props) => {
+  const { items, totalAmount } = useContext(ItemContext);
+  const totalPrice = `$${totalAmount.toFixed(2)}`;
 
-const Cart = () => {
   return (
     <>
       <div className="cart-box">
-        <span>Order Lists</span>
-        {fruits.map((fruit) => (
-          <CartItem key={fruit.id} fruit={fruit} />
-        ))}
+        {items.length < 1 ? (
+          <div className="noDataCart">
+            <h2>No Items in your cart !!!</h2>
+            {/* <div className="closeBtn">
+              <button className="cancelBtn" onClick={props.hideCartHandler}>
+                Close
+              </button>
+            </div> */}
+          </div>
+        ) : (
+          <>
+            <span>Your cart items are here...</span>
+            <section className="overflowCtr">
+              {items.map((fruit) => (
+                <CartItem key={fruit.id} fruit={fruit} />
+              ))}
+            </section>
 
-        <div className="cart-total">
-          <h3>Total price</h3>
-          <p>$ 1000</p>
-        </div>
+            <div className="cart-total">
+              <h3>Total price</h3>
+              <p>{totalPrice}</p>
+            </div>
 
-        <div className="btn">
-          <button className="cancelBtn">Cancel</button>
-          <button className="orderBtn">Order</button>
-        </div>
+            <div className="btn">
+              <button className="cancelBtn" onClick={props.hideCartHandler}>
+                Cancel
+              </button>
+              <button
+                className="orderBtn"
+                onClick={() => {
+                  alert("Ordered !!");
+                }}
+              >
+                Order
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </>
   );

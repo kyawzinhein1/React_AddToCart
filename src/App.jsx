@@ -1,16 +1,13 @@
-import React from 'react'
-import Body from './layouts/Body'
-import Header from './layouts/header'
-import Backdrop from './components/Backdrop'
+import React from "react";
+import Control from "./layouts/Control";
+import ItemContextProvider from "./Store/itemContext";
 
 const App = () => {
   return (
-    <div>
-      <Header/>
-      <Body/>
-      <Backdrop/>
-    </div>
-  )
-}
+    <ItemContextProvider>
+      <Control />
+    </ItemContextProvider>
+  );
+};
 
-export default App
+export default App;

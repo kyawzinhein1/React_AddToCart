@@ -1,12 +1,17 @@
-import React from 'react'
-import Cart from './Cart'
+import React from "react";
+import Cart from "./Cart";
 
-const Backdrop = () => {
+const Backdrop = (props) => {
   return (
-    <div className='backdrop'>
-        <Cart/>
-    </div>
-  )
-}
+    <>
+      {props.showCart && (
+        <>
+          <section className="backdrop" onClick={props.hideCartHandler} />
+          <Cart hideCartHandler={props.hideCartHandler} />
+        </>
+      )}
+    </>
+  );
+};
 
-export default Backdrop
+export default Backdrop;
